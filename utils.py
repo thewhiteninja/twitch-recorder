@@ -9,7 +9,7 @@ import pytz
 
 
 def log(s):
-    d = datetime.now(pytz.timezone("Europe/Paris"))
+    d = datetime.now()
     sys.stdout.write("%s - %s\n" % (d.strftime("%m/%d/%Y %H:%M:%S"), s))
     sys.stdout.flush()
 

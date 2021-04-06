@@ -11,10 +11,10 @@ import pytz
 from utils import log
 
 
-def make_datetime(t):
+def make_datetime(t, tz):
     time = datetime.datetime.strptime(t, '%H:%M')
     date = datetime.datetime.now().replace(hour=time.hour, minute=time.minute, second=0)
-    date = pytz.timezone("Europe/Paris").localize(date, is_dst=None)
+    date = pytz.timezone(tz).localize(date, is_dst=None)
     return date
 
 
@@ -40,10 +40,10 @@ class StreamRec(Thread):
         next_stream, next_wait, next_duration = 0, 0, 0
         for i in range(len(self.config["streams"])):
             stream = self.config["streams"][i]
-            begin = make_datetime(stream["start"])
-            end = make_datetime(stream["end"])
+            begin = make_datetime(stream["start"], self.config["timezone"])
+            end = make_datetime(stream["end"], self.config["timezone"])
             days = make_days(stream)
-            now = datetime.datetime.now(pytz.timezone("Europe/Paris"))
+            now = datetime.datetime.now(pytz.timezone(self.config["timezone"]))
 
             while begin < now or begin.weekday() not in days:
                 if now < end and begin.weekday() in days:
@@ -59,7 +59,7 @@ class StreamRec(Thread):
         return next_stream, next_wait, next_duration
 
     def build_args(self, stream):
-        begin = make_datetime(stream["start"])
+        begin = make_datetime(stream["start"], self.config["timezone"])
 
         args = ["streamlink"]
         for o in self.config["options"].keys():
