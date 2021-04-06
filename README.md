@@ -5,14 +5,13 @@
 
 <br />
 
-Twitchrec is a Twitch recorder script.
+Twitchrec is a Twitch recorder base on the awesome streamlink.
 
 Check an example of stream in the [data](data) folder.
 
 #### Requirements
 
 - [streamlink](https://github.com/streamlink/streamlink)
-- [ffmpeg](https://ffmpeg.org/download.html)
 
 #### Usage
 
@@ -20,8 +19,8 @@ Check an example of stream in the [data](data) folder.
 
       {
         "id": "lestream",
+        "timezone": "Europe/Paris",
         "options": {
-          "twitch-oauth-token": "YOUR_TWICH_TOKEN"
         },
         "streams": [
           {
@@ -34,6 +33,6 @@ Check an example of stream in the [data](data) folder.
         ]
       }
 
-- Run this script :)
+- Run main.py
 
 
