@@ -1,0 +1,50 @@
+{
+    "id": "lestream",
+    "timezone": "Europe/Paris",
+    "options": {
+    },
+    "streams": [
+        {
+            "name": "Le Recap",
+            "quality": "1080p",
+            "days": "Mon,Tue,Wed,Thu,Fri",
+            "start": "18:30",
+            "end": "20:30"
+        },
+        {
+            "name": "Le Journal",
+            "quality": "1080p",
+            "days": "Mon,Tue,Wed,Thu,Fri",
+            "start": "12:30",
+            "end": "14:30"
+        },
+        {
+            "name": "Le Debat",
+            "quality": "1080p",
+            "days": "Wed",
+            "start": "14:30",
+            "end": "16:30"
+        },
+        {
+            "name": "Le Mobile",
+            "quality": "1080p",
+            "days": "Wed",
+            "start": "16:30",
+            "end": "18:30"
+        },
+        {
+            "name": "Manga Sur",
+            "quality": "1080p",
+            "days": "Fri",
+            "start": "14:30",
+            "end": "16:30"
+        },
+        {
+            "name": "Le JDH",
+            "quality": "1080p",
+            "days": "Fri",
+            "start": "16:30",
+            "end": "18:30"
+        }
+    ]
+}
