@@ -72,7 +72,7 @@ class StreamRec(Thread):
             begin.minute)
         output_file = os.path.join(self.outdir, filename)
         args.append("-o")
-        args.append("'%s'" % (output_file))
+        args.append("%s" % (output_file))
 
         return args, output_file
 
@@ -86,12 +86,7 @@ class StreamRec(Thread):
             log("Command: " + (" ".join(args)))
             proc = subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             log("Recording %s ..." % stream["name"])
-            time.sleep(8)
-            no_stream = proc.poll()
-            if no_stream is not None:
-                log("No playable streams for now")
-                log("Waiting for the next stream...")
             time.sleep(next_duration)
-            if no_stream is None:
+            if proc is not None:
                 proc.terminate()
                 log("End of stream")

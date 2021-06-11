@@ -5,13 +5,14 @@
 
 <br />
 
-Twitchrec is a Twitch recorder base on the awesome streamlink.
+Twitchrec is a Twitch recorder script.
 
 Check an example of stream in the [data](data) folder.
 
 #### Requirements
 
 - [streamlink](https://github.com/streamlink/streamlink)
+- [ffmpeg](https://ffmpeg.org/download.html)
 
 #### Usage
 
