@@ -1,11 +1,16 @@
 import errno
 import os
 import platform
+import subprocess
 import sys
 import time
 from datetime import datetime
+from packaging import version
 
-import pytz
+
+def check_streamlink_version(minimal_version="5.1.0"):
+    v = subprocess.check_output(["streamlink", "-V"], timeout=5).decode().strip()
+    return version.parse(v[11:]) >= version.parse(minimal_version)
 
 
 def log(s):

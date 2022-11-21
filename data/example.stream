@@ -1,0 +1,15 @@
+{
+    "id": "lestream",
+    "timezone": "Europe/Paris",
+    "options": {
+    },
+    "streams": [
+		{
+            "name": "Le Recap",
+            "quality": "best",
+            "days": "Mon,Tue,Wed,Thu,Fri",
+            "start": "18:30",
+            "end": "20:30"
+        }
+    ]
+}

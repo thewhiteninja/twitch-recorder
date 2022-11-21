@@ -65,6 +65,7 @@ class StreamRec(Thread):
         for o in self.config["options"].keys():
             args.append("--" + o)
             args.append(self.config["options"][o])
+        args.append("--twitch-disable-ads")
         args.append("twitch.tv/" + self.config["id"])
         args.append(stream["quality"])
         filename = "%s_%s_%02d_%02d%02d.mp4" % (

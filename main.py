@@ -47,8 +47,12 @@ def load_streams():
 def main():
     utils.welcome()
     parse_args(sys.argv)
-    utils.make_directory(OUTDIR)
-    load_streams()
+    if utils.check_streamlink_version():
+        utils.make_directory(OUTDIR)
+        load_streams()
+    else:
+        utils.log("Streamlink version >= 5.1.0 required!")
+        utils.log("Download it here: https://github.com/streamlink/windows-builds/releases/")
 
 
 if __name__ == '__main__':
