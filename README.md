@@ -11,7 +11,7 @@ Check an example of stream in the [data](data) folder.
 
 #### Requirements
 
-- [streamlink](https://github.com/streamlink/streamlink)
+- [streamlink](https://github.com/streamlink/streamlink) >= 5.1.0
 - [ffmpeg](https://ffmpeg.org/download.html)
 
 #### Usage
